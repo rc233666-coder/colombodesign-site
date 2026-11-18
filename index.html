@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colombo Design | Sites e landing pages sob medida</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Landing pages e sites sob medida para profissionais liberais e empresas. Design exclusivo, rápido no celular e pronto para vender. Fale com o designer pelo WhatsApp.">
+<meta name="theme-color" content="#0F1A17">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://colombodesign.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Colombo Design">
+<meta property="og:title" content="Colombo Design | Sites e landing pages sob medida">
+<meta property="og:description" content="Design exclusivo, rápido no celular e pronto para vender. Fale com o designer pelo WhatsApp.">
+<meta property="og:url" content="https://colombodesign.com.br/">
+<meta property="og:image" content="https://colombodesign.com.br/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Colombo Design","url":"https://colombodesign.com.br/","description":"Criação de sites e landing pages sob medida para profissionais liberais e empresas.","telephone":"+55 51 99897-4961","areaServed":"BR","image":"https://colombodesign.com.br/og.jpg"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: editorial em faixas largas; herói com "navegador" desenhado em CSS; serviços em cards de orçamento; portfólio em janelas de browser. */
+:root{
+  --bg:#F3F5F2; --surface:#FFFFFF; --ink:#101815; --muted:#56635D; --line:#D9DFDA;
+  --accent:#0B6B5C; --accent-ink:#FFFFFF; --accent-soft:#DCEDE8; --brass:#B8892E;
+  --wa:#1FA855; --band:#0F1A17; --band-ink:#E8EFEB; --band-muted:#9AABA4;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:14px; --max:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1311; --surface:#141C19; --ink:#E9EFEC; --muted:#97A59F; --line:#25302C;
+  --accent:#3FC2A5; --accent-ink:#06211B; --accent-soft:#16302A; --brass:#D9AE57;
+  --wa:#25C463; --band:#08100D; --band-ink:#E9EFEC; --band-muted:#8C9C95; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1311; --surface:#141C19; --ink:#E9EFEC; --muted:#97A59F; --line:#25302C;
+  --accent:#3FC2A5; --accent-ink:#06211B; --accent-soft:#16302A; --brass:#D9AE57;
+  --wa:#25C463; --band:#08100D; --band-ink:#E9EFEC; --band-muted:#8C9C95; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);margin:0;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(64px,9vw,120px)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.h2{font-size:clamp(32px,4.6vw,54px);font-weight:700;margin-top:18px;max-width:18ch}
+.lead{color:var(--muted);font-size:clamp(17px,1.6vw,19px);max-width:58ch;margin-top:18px}
+.sec-head{display:grid;gap:0;margin-bottom:clamp(36px,5vw,56px)}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px/1 var(--body);text-decoration:none;padding:17px 24px;border-radius:999px;border:1.5px solid transparent;transition:transform .2s ease, background .2s ease, box-shadow .2s ease;cursor:pointer;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 24px -10px var(--wa)}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink)}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}
+.logo{font:800 25px/1 var(--display);letter-spacing:-.04em;text-decoration:none;display:flex;align-items:baseline;gap:2px}
+.logo i{display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:2px;transform:translateY(-1px)}
+.logo small{font:500 11px/1 var(--mono);letter-spacing:.12em;color:var(--muted);margin-left:8px;text-transform:uppercase}
+.menu{display:flex;gap:28px;font-size:15px}
+.menu a{text-decoration:none;color:var(--muted)}
+.menu a:hover{color:var(--ink)}
+.nav .btn{padding:12px 18px;font-size:14px}
+@media (max-width:900px){.menu{display:none}}
+@media (max-width:460px){.logo small{display:none}.nav .btn span{display:none}.nav .btn{padding:12px}}
+
+/* Hero */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(56px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero-grid>*{min-width:0}
+.badge{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 var(--body);padding:9px 14px 9px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted)}
+.badge b{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px color-mix(in srgb,var(--wa) 22%,transparent)}
+.hero h1{font-size:clamp(42px,6.4vw,82px);font-weight:800;margin-top:24px;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.09em;background:var(--brass);border-radius:2px;opacity:.85}
+.hero .lead{margin-top:24px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;color:var(--muted);font-size:14px}
+.proof span{display:flex;align-items:center;gap:8px}
+.proof svg{width:16px;height:16px;color:var(--accent)}
+
+/* Browser mockup */
+.stage{position:relative;padding:18px 0 40px}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(10,30,25,.45)}
+.bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface) 92%,var(--ink))}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.bar .url{margin-left:10px;flex:1;min-width:0;font:400 11.5px/1 var(--mono);color:var(--muted);background:var(--bg);border-radius:6px;padding:7px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mock{padding:22px;display:grid;gap:14px;background:linear-gradient(160deg,var(--accent-soft),var(--surface) 60%)}
+.mock .mnav{display:flex;justify-content:space-between;align-items:center}
+.mock .mlogo{font:700 13px/1 var(--display)}
+.mock .mlinks{display:flex;gap:8px}
+.mock .mlinks i{width:30px;height:6px;border-radius:3px;background:var(--line)}
+.mock .mt{font:700 clamp(20px,2.3vw,28px)/1.08 var(--display);letter-spacing:-.02em;max-width:14ch;margin-top:10px}
+.mock .ml{height:7px;border-radius:4px;background:var(--line)}
+.mock .mbtn{justify-self:start;font:600 11px/1 var(--body);background:var(--wa);color:#fff;padding:10px 14px;border-radius:999px}
+.mock .mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.mock .mcards div{height:58px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 18px 40px -22px rgba(10,30,25,.5);font-size:13px;line-height:1.25}
+.chip strong{display:block;font:700 20px/1 var(--display)}
+.chip .ring{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font:600 13px/1 var(--mono);color:var(--accent);background:conic-gradient(var(--accent) 0 96%,var(--line) 0);position:relative}
+.chip .ring::before{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--surface)}
+.chip .ring span{position:relative}
+.chip-a{left:-22px;bottom:4px}
+.chip-b{right:-14px;top:-4px}
+.phone{position:absolute;right:18px;bottom:-6px;width:118px;border:6px solid var(--ink);border-radius:22px;background:var(--surface);overflow:hidden;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.phone div{padding:12px 10px;display:grid;gap:7px;background:linear-gradient(170deg,var(--accent-soft),var(--surface))}
+.phone b{font:700 11px/1.1 var(--display)}
+.phone i{height:5px;border-radius:3px;background:var(--line)}
+.phone em{font:600 8px/1 var(--body);font-style:normal;background:var(--wa);color:#fff;padding:6px 8px;border-radius:99px;justify-self:start}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.stage{max-width:560px}}
+@media (max-width:520px){.chip-a{left:-4px}.chip-b{right:-4px}.phone{display:none}}
+
+/* Faixa de profissões */
+.ticker{border-block:1px solid var(--line);background:var(--surface);overflow:hidden}
+.ticker-in{display:flex;gap:44px;padding-block:20px;width:max-content;animation:roll 38s linear infinite;font:500 clamp(16px,1.6vw,19px)/1 var(--display);color:var(--muted)}
+.ticker-in span{display:flex;align-items:center;gap:44px;white-space:nowrap}
+.ticker-in span::after{content:"";width:6px;height:6px;border-radius:2px;background:var(--brass)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* Comparativo */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.compare>div{border-radius:var(--r);padding:clamp(24px,3vw,36px);min-width:0}
+.c-bad{border:1px dashed var(--line)}
+.c-good{background:var(--band);color:var(--band-ink)}
+.compare h3{font-size:22px;font-weight:700}
+.compare .tag{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.c-good .tag{color:var(--accent)}
+.compare ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.compare li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.compare li svg{width:20px;height:20px;margin-top:3px}
+.c-bad li{color:var(--muted)} .c-bad li svg{color:var(--muted)}
+.c-good li svg{color:var(--accent)}
+@media (max-width:760px){.compare{grid-template-columns:1fr}}
+
+/* Serviços */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,34px);display:grid;grid-template-rows:auto auto 1fr auto;gap:16px;min-width:0;transition:border-color .2s}
+.svc:hover{border-color:var(--accent)}
+.svc-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.svc .kind{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.svc .time{font:500 12px/1 var(--mono);color:var(--accent);background:var(--accent-soft);padding:7px 10px;border-radius:999px}
+.svc h3{font-size:clamp(24px,2.4vw,30px);font-weight:700}
+.svc p{color:var(--muted)}
+.svc ul{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:8px;font-size:15px}
+.svc li{display:flex;gap:10px}
+.svc li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:2px;background:var(--accent)}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
+.price{font-size:14px;color:var(--muted);line-height:1.3}
+.price b{display:block;font:700 17px/1.2 var(--display);color:var(--ink)}
+.svc .btn{padding:13px 18px;font-size:14px}
+.svc.featured{background:var(--band);color:var(--band-ink);border-color:var(--band)}
+.svc.featured p,.svc.featured .price,.svc.featured .kind{color:var(--band-muted)}
+.svc.featured .price b{color:var(--band-ink)}
+.svc.featured .svc-foot{border-color:color-mix(in srgb,var(--band-ink) 16%,transparent)}
+.svc.featured .time{background:color-mix(in srgb,var(--accent) 20%,transparent)}
+@media (max-width:800px){.services{grid-template-columns:1fr}}
+
+/* Incluso */
+.incl{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.incl div{padding:26px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.incl svg{width:26px;height:26px;color:var(--accent)}
+.incl h3{font:600 17px/1.25 var(--body);letter-spacing:0;margin-top:14px}
+.incl p{font-size:14.5px;color:var(--muted);margin-top:6px}
+@media (max-width:900px){.incl{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.incl{grid-template-columns:1fr}}
+
+/* Portfólio: cases grandes com telas que rolam (desktop + celular) e conceitos */
+.cases{display:grid;gap:clamp(56px,8vw,110px)}
+.case{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.case>*{min-width:0}
+.case.flip{grid-template-columns:1fr 1.45fr}
+.case.flip .devices{order:2}
+.devices{position:relative;padding:0 clamp(20px,5vw,60px) clamp(28px,4vw,48px) 0}
+.case.flip .devices{padding:0 0 clamp(28px,4vw,48px) clamp(20px,5vw,60px)}
+.devices::before{content:"";position:absolute;inset:8% 4% 0 6%;border-radius:28px;background:radial-gradient(70% 70% at 50% 40%,var(--accent-soft),transparent 70%);z-index:-1}
+.frame{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 50px 90px -50px rgba(5,20,15,.6)}
+.frame .bar{padding:10px 12px}
+.screen{position:relative;overflow:hidden;aspect-ratio:16/10;max-width:100%;background:#0b0d10;cursor:ns-resize}
+.canvas{position:absolute;top:0;left:0;width:1000px;transform-origin:0 0;transform:scale(var(--s,.5))}
+.phone-shell .canvas{width:390px}
+.pg{transition:transform 7s cubic-bezier(.45,0,.25,1);will-change:transform}
+.pg img{display:block;width:100%;height:auto}
+.screen:hover .pg,.screen:focus-within .pg,.screen.play .pg{transform:translateY(calc(var(--travel,0px) * -1))}
+@media (hover:none){.screen .pg{animation:pan 16s ease-in-out 1s infinite alternate}}
+@keyframes pan{0%,12%{transform:none}88%,100%{transform:translateY(calc(var(--travel,0px) * -1))}}
+.phone-shell{position:absolute;right:0;bottom:0;width:clamp(96px,22%,170px);border:5px solid #0c0f0e;border-radius:24px;overflow:hidden;background:#0c0f0e;box-shadow:0 30px 60px -24px rgba(0,0,0,.65)}
+.case.flip .phone-shell{right:auto;left:0}
+.phone-shell .screen{aspect-ratio:390/780;border-radius:19px;cursor:default}
+.hint{position:absolute;left:14px;bottom:clamp(36px,5vw,58px);font:500 11px/1 var(--mono);letter-spacing:.06em;background:rgba(8,14,12,.78);color:#E8EFEB;padding:8px 10px;border-radius:999px;pointer-events:none;transition:opacity .3s}
+.case.flip .hint{left:auto;right:14px}
+.devices:hover .hint{opacity:0}
+@media (hover:none){.hint{display:none}}
+.case-info{display:grid;gap:18px;align-content:start}
+.case-tag{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.case-info h3{font-size:clamp(30px,3.6vw,44px);font-weight:800}
+.case-info>p{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font:500 13px/1 var(--body);padding:9px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
+.facts div{padding:16px 12px 16px 0;min-width:0}
+.facts div+div{padding-left:14px;border-left:1px solid var(--line)}
+.facts b{display:block;font:700 clamp(16px,1.6vw,22px)/1.1 var(--display);letter-spacing:-.02em}
+.facts small{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}
+.case-link{justify-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px;color:var(--ink)}
+.case-link:hover{color:var(--accent)}
+.pill{flex:none;font:500 11px/1 var(--mono);letter-spacing:.06em;padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.live{border-color:transparent;background:var(--accent-soft);color:var(--accent)}
+.pill.live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--wa);margin-right:7px;vertical-align:1px}
+@media (max-width:900px){.case,.case.flip{grid-template-columns:1fr}.case.flip .devices{order:0}}
+@media (max-width:480px){.facts b{font-size:17px}.facts small{font-size:12px}}
+
+/* ===== Mockups (desenhados em 1000px e escalados) ===== */
+.mk{font-family:var(--body);color:#111;line-height:1.4}
+.mk *{box-sizing:border-box}
+.mk .row{display:flex;align-items:center}
+/* AquaVL celular (versão responsiva a partir do print real) */
+.avm{height:780px;padding:18px 20px;color:#fff;font-family:Montserrat,"Bricolage Grotesque",sans-serif;background:linear-gradient(180deg,rgba(18,38,120,.78),rgba(14,30,96,.72) 70%,rgba(10,22,70,.85)),url(img/aquavl-mobile-bg.jpg) center/cover;display:flex;flex-direction:column;gap:14px}
+.avm-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.avm-logo{font:600 26px/1 Montserrat,sans-serif;letter-spacing:-.01em}
+.avm-logo small{display:block;font:500 8px/1 Montserrat,sans-serif;letter-spacing:.3em;text-transform:uppercase;text-align:center;opacity:.85;margin-top:4px}
+.avm-burger{display:grid;gap:5px}.avm-burger i{width:26px;height:3px;border-radius:2px;background:#fff}
+.avm-eye{align-self:flex-start;font:700 10px/1 Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6FC3F0;padding:9px 12px;border:1px solid rgba(111,195,240,.45);border-radius:999px;background:rgba(10,30,90,.5)}
+.avm h5{margin:6px 0 0;font:800 36px/1.08 Montserrat,sans-serif;letter-spacing:-.01em}
+.avm h5 em{font-style:normal;color:#1BA1E2}
+.avm p{margin:0;font-size:15.5px;line-height:1.55;opacity:.88}
+.avm-btn{display:block;text-align:center;font:700 16px/1 Montserrat,sans-serif;padding:17px;border-radius:999px;background:linear-gradient(180deg,#1BA9EC,#0B86CC)}
+.avm-btn.o{background:rgba(10,20,60,.55);border:1.5px solid rgba(255,255,255,.6)}
+.avm-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.avm-badges span{font:700 11.5px/1 Montserrat,sans-serif;padding:10px 12px 10px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;gap:7px}
+.avm-badges span::before{content:"";width:16px;height:16px;border-radius:50%;background:#1BA1E2}
+
+.concepts-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin:clamp(70px,9vw,120px) 0 clamp(36px,5vw,56px);padding-top:28px;border-top:1px solid var(--line)}
+.concepts-head h3{font-size:clamp(24px,2.6vw,32px);font-weight:700;max-width:22ch}
+.concepts-head p{color:var(--muted);max-width:46ch;font-size:15.5px}
+.mk img{display:block;width:100%;height:100%;object-fit:cover}
+.avm-burger.dark i{background:#2B2330}.avm-burger.gold i{background:#C9A55C}
+
+/* Clínica Sorrir */
+.cs{background:#FBF8F6;color:#2B2330}
+.cs-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#fff;border-bottom:1px solid #F0E8EC}
+.cs-logo{font:700 21px/1 var(--display);display:flex;gap:9px;align-items:center}
+.cs-logo i{width:24px;height:24px;border-radius:8px;background:linear-gradient(135deg,#B184C4,#7A4E8C)}
+.cs-links{display:flex;gap:24px;font-size:14px;color:#6E6175}
+.cs-btn{background:#7A4E8C;color:#fff;font-weight:600;font-size:14px;padding:13px 20px;border-radius:999px;display:inline-block}
+.cs-btn.wa{background:#1FA855}
+.cs-btn.ghost{background:transparent;color:#7A4E8C;border:1.5px solid #D9C6E0}
+.cs-hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:44px 50px 50px}
+.cs-eye{display:inline-block;font-size:12.5px;font-weight:600;color:#7A4E8C;background:#F0E6F3;padding:7px 12px;border-radius:999px}
+.cs-hero h5{margin:16px 0 0;font:700 50px/1.02 var(--display);letter-spacing:-.03em}
+.cs-hero h5 em,.csm h5 em{font-style:normal;color:#7A4E8C}
+.cs-hero p{margin:16px 0 26px;font-size:16.5px;color:#6E6175;max-width:40ch}
+.cs-rate{display:flex;gap:10px;align-items:baseline;margin-top:22px;font-size:13px;color:#6E6175}
+.cs-rate b{color:#2B2330;font-size:15px}
+.cs-photo{position:relative;height:400px;border-radius:28px}
+.cs-photo img{border-radius:28px}
+.cs-card{position:absolute;left:-22px;bottom:28px;background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 14px 30px -12px rgba(80,40,90,.35);font-size:12.5px;color:#6E6175}
+.cs-card b{display:block;color:#2B2330;font:700 16px/1.2 var(--display)}
+.cs-trust{display:flex;gap:34px;align-items:center;padding:22px 50px;border-block:1px solid #EFE6EC;background:#fff;font-size:15px;color:#9A8DA1}
+.cs-trust span{font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.cs-trust b{font:700 17px/1 var(--display);color:#B3A8B8}
+.cs-sec{padding:56px 50px}
+.cs-h{margin:0;font:700 34px/1.1 var(--display);letter-spacing:-.02em}
+.cs-svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.cs-svc{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #EFE6EC}
+.cs-svc>img{height:170px}
+.cs-svc>div{padding:20px 22px 22px}
+.cs-svc b{display:block;font:700 18px/1.2 var(--display)}
+.cs-svc p{margin:8px 0 12px;font-size:13.5px;color:#6E6175}
+.cs-svc span{font-size:13px;font-weight:600;color:#7A4E8C}
+.cs-stats{display:grid;grid-template-columns:repeat(4,1fr);background:#2B2330;color:#fff;border-radius:22px;padding:30px;margin:0 50px}
+.cs-stats div{text-align:center}
+.cs-stats b{display:block;font:700 34px/1 var(--display)}
+.cs-stats small{font-size:13px;opacity:.7}
+.cs-test{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.cs-test div{background:#fff;border-radius:18px;padding:24px;border:1px solid #EFE6EC;font-size:14.5px}
+.cs-test .st{color:#F5B301;letter-spacing:2px}
+.cs-test p{margin:10px 0 12px}
+.cs-test b{font-size:13px}
+.cs-cta{margin:0 50px 56px;border-radius:24px;background:linear-gradient(120deg,#7A4E8C,#A06BB3);color:#fff;padding:44px;display:flex;justify-content:space-between;align-items:center}
+.cs-cta h5{margin:0;font:700 32px/1.1 var(--display);max-width:16ch}
+.cs-cta span{background:#1FA855;color:#fff;font-weight:600;padding:15px 22px;border-radius:999px;font-size:15px}
+/* clínica celular */
+.csm{background:#FBF8F6;color:#2B2330;height:780px;display:flex;flex-direction:column;gap:14px;padding-bottom:20px}
+.csm .cs-nav{padding:16px 20px}
+.csm>img{height:250px;width:calc(100% - 32px);margin:0 16px;border-radius:22px}
+.csm .cs-eye{align-self:flex-start;margin:6px 20px 0}
+.csm h5{margin:0 20px;font:700 34px/1.05 var(--display);letter-spacing:-.03em}
+.csm p{margin:0 20px;font-size:15px;color:#6E6175}
+.csm .cs-btn{margin:4px 20px 0;text-align:center;padding:16px;font-size:15px}
+.csm .cs-rate{margin:4px 20px 0}
+
+/* Almeida Advocacia */
+.al{background:#12141A;color:#EDE6D6}
+.al-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 54px;border-bottom:1px solid #2A2D36}
+.al-logo{font:400 23px/1 Georgia,"Times New Roman",serif;letter-spacing:.02em}
+.al-logo small{display:block;font:500 10px/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:#C9A55C;margin-top:6px}
+.al-links{display:flex;gap:26px;font-size:13.5px;color:#A9A396}
+.al-btn{border:1px solid #C9A55C;color:#C9A55C;font-size:13.5px;font-weight:600;padding:13px 20px;border-radius:2px;display:inline-block}
+.al-btn.f{background:#C9A55C;color:#12141A}
+.al-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:56px 54px 64px}
+.al-eye{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#C9A55C}
+.al-hero h5{margin:18px 0 0;font:400 54px/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.01em}
+.al h5 em,.alm h5 em{color:#C9A55C}
+.al-hero p{margin:20px 0 30px;font-size:16px;color:#A9A396;max-width:44ch}
+.al-cred{display:flex;gap:30px;margin-top:34px;padding-top:22px;border-top:1px solid #2A2D36;font-size:12.5px;color:#A9A396}
+.al-cred b{display:block;font:400 20px/1.1 Georgia,serif;color:#EDE6D6;margin-bottom:4px}
+.al-port{position:relative;height:430px;border-radius:220px 220px 0 0;overflow:hidden;border:1px solid #3A3E49}
+.al-port img{object-position:50% 20%;filter:saturate(.85) contrast(1.05)}
+.al-port::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(18,20,26,.85))}
+.al-sig{position:absolute;right:18px;bottom:16px;z-index:1;font:italic 400 17px/1 Georgia,serif;color:#C9A55C}
+.al-sec{padding:60px 54px;border-top:1px solid #2A2D36}
+.al-h{margin:0;font:400 36px/1.1 Georgia,"Times New Roman",serif}
+.al-areas{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border-left:1px solid #2A2D36}
+.al-areas div{padding:26px 20px;border-right:1px solid #2A2D36}
+.al-areas span{font:400 30px/1 Georgia,serif;color:#C9A55C}
+.al-areas b{display:block;margin-top:14px;font:400 20px/1.2 Georgia,serif}
+.al-areas p{font-size:13px;color:#A9A396;margin:8px 0 0}
+.al-quote{position:relative;height:300px;display:grid;place-items:center;text-align:center;overflow:hidden}
+.al-quote>img{position:absolute;inset:0;filter:brightness(.32) saturate(.7)}
+.al-quote>div{position:relative;padding:0 60px}
+.al-quote p{margin:0 auto;font:italic 400 30px/1.35 Georgia,serif;max-width:30ch}
+.al-quote small{display:block;margin-top:18px;color:#C9A55C;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.al-how{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.al-how>img{height:340px;filter:saturate(.8)}
+.al-steps{display:grid;gap:22px;margin-top:26px}
+.al-steps b{display:block;font:400 20px/1.2 Georgia,serif;margin-top:6px}
+.al-steps p{margin:6px 0 0;font-size:13.5px;color:#A9A396}
+.al-steps i{font-style:normal;font-size:12px;letter-spacing:.2em;color:#C9A55C}
+.al-cta{position:relative;margin:0 54px 60px;height:220px;overflow:hidden;border:1px solid #C9A55C}
+.al-cta>img{position:absolute;inset:0;filter:brightness(.35)}
+.al-cta>div{position:relative;height:100%;padding:0 44px;display:flex;justify-content:space-between;align-items:center}
+.al-cta h5{margin:0;font:400 32px/1.15 Georgia,serif;max-width:18ch}
+.al-foot{padding:24px 54px;border-top:1px solid #2A2D36;font-size:12px;color:#7D786C;display:flex;justify-content:space-between}
+/* advocacia celular */
+.alm{background:#12141A;color:#EDE6D6;height:780px;display:flex;flex-direction:column;gap:16px}
+.alm .al-nav{padding:18px 20px}
+.alm .al-port{height:330px;margin:4px 30px 0}
+.alm .al-eye{margin:6px 20px 0;font-size:10.5px}
+.alm h5{margin:0 20px;font:400 36px/1.08 Georgia,"Times New Roman",serif}
+.alm .al-btn{margin:6px 20px 0;text-align:center;padding:16px;font-size:14px}
+
+/* Processo */
+.band{background:var(--band);color:var(--band-ink)}
+.band .lead{color:var(--band-muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid color-mix(in srgb,var(--band-ink) 18%,transparent)}
+.step{padding:28px 24px 8px 0;min-width:0;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:500 13px/1 var(--mono);color:var(--accent);display:block;margin-bottom:22px}
+.step::after{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.step h3{font-size:22px;font-weight:700}
+.step p{color:var(--band-muted);margin-top:10px;font-size:15.5px}
+.step small{display:block;margin-top:14px;font:500 12px/1 var(--mono);color:var(--brass)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr);row-gap:24px}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start}
+.faq-grid>*{min-width:0}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:600 18px/1.35 var(--body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 26px/1 var(--display);color:var(--accent);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 22px;max-width:62ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* CTA final */
+.final{padding-block:clamp(48px,7vw,90px)}
+.final-box{background:var(--accent);color:var(--accent-ink);border-radius:24px;padding:clamp(32px,6vw,72px);display:grid;grid-template-columns:1.3fr auto;gap:32px;align-items:end;position:relative;overflow:hidden}
+.final-box>*{min-width:0;position:relative}
+.final-box::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border:1px solid currentColor;border-radius:50%;opacity:.18}
+.final-box::after{content:"";position:absolute;right:30px;top:30px;width:140px;height:140px;border:1px solid currentColor;border-radius:50%;opacity:.18}
+.final-box h2{font-size:clamp(34px,5vw,62px);font-weight:800;max-width:15ch}
+.final-box p{margin-top:16px;opacity:.85;max-width:48ch}
+.final-box .btn-wa{background:var(--accent-ink);color:var(--accent);box-shadow:none}
+.final-box .num{font:500 13px/1 var(--mono);margin-top:14px;opacity:.8;text-align:center}
+@media (max-width:760px){.final-box{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;z-index:55;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;border-radius:999px;padding:14px;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);font:600 15px/1 var(--body)}
+.fab svg{width:28px;height:28px}
+.fab span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .3s ease, margin .3s ease}
+.fab:hover span,.fab:focus-visible span{max-width:200px;margin-right:6px}
+.fab::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--wa);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.7}to{transform:scale(1.35);opacity:0}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="ok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="no" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 7l10 10M17 7L7 17"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#topo" aria-label="Colombo Design, início">colombo<i></i><small>design</small></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg><span>Falar com o designer</span></a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><b></b>Agenda aberta para novos projetos</span>
+        <h1>Seu trabalho é sério. Seu site <em>também</em> precisa ser.</h1>
+        <p class="lead">Crio landing pages e sites sob medida para profissionais liberais e empresas. Design exclusivo, rápido no celular e pensado para transformar visita em conversa no WhatsApp. Você não precisa mexer em nada, e o investimento é acessível.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg>Falar com o designer</a>
+          <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
+        </div>
+        <div class="proof">
+          <span><svg><use href="#ok"/></svg>Pronto a partir de 7 dias</span>
+          <span><svg><use href="#ok"/></svg>Sem mensalidade de plataforma</span>
+          <span><svg><use href="#ok"/></svg>O site é 100% seu</span>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span class="url">https://www.seunegocio.com.br</span></div>
+          <div class="mock">
+            <div class="mnav"><span class="mlogo">Dra. Helena Prado</span><span class="mlinks"><i></i><i></i><i></i></span></div>
+            <div class="mt">Odontologia estética com atendimento humano.</div>
+            <div class="ml" style="width:78%"></div>
+            <div class="ml" style="width:56%"></div>
+            <span class="mbtn">Agendar pelo WhatsApp</span>
+            <div class="mcards"><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="chip chip-b"><span class="ring"><span>98</span></span><span>Nota de velocidade<br>no Google</span></div>
+        <div class="chip chip-a"><span><strong>0,9 s</strong>para abrir no celular</span></div>
+        <div class="phone"><div><b>Dra. Helena Prado</b><i style="width:90%"></i><i style="width:70%"></i><em>WhatsApp</em><i style="width:80%"></i><i style="width:60%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Para quem eu crio sites">
+    <div class="ticker-in">
+      <span>Advogados</span><span>Dentistas</span><span>Psicólogos</span><span>Médicos e clínicas</span><span>Arquitetos</span><span>Contadores</span><span>Nutricionistas</span><span>Consultores</span><span>Personal trainers</span><span>Empresas de serviço</span>
+      <span aria-hidden="true">Advogados</span><span aria-hidden="true">Dentistas</span><span aria-hidden="true">Psicólogos</span><span aria-hidden="true">Médicos e clínicas</span><span aria-hidden="true">Arquitetos</span><span aria-hidden="true">Contadores</span><span aria-hidden="true">Nutricionistas</span><span aria-hidden="true">Consultores</span><span aria-hidden="true">Personal trainers</span><span aria-hidden="true">Empresas de serviço</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Por que sob medida</span>
+        <h2 class="h2">Sem tempo para montar um site? Nem precisa.</h2>
+        <p class="lead">Construtores prontos prometem facilidade, mas deixam o trabalho pesado com você e entregam um site com cara de modelo. Aqui é o contrário.</p>
+      </div>
+      <div class="compare">
+        <div class="c-bad">
+          <span class="tag">Construtor de arrastar e soltar</span>
+          <h3 style="margin-top:12px">Você faz tudo sozinho</h3>
+          <ul>
+            <li><svg><use href="#no"/></svg>Template igual ao de milhares de outros negócios</li>
+            <li><svg><use href="#no"/></svg>Horas perdidas ajustando texto, foto e layout</li>
+            <li><svg><use href="#no"/></svg>Lento no celular, o que afasta cliente e prejudica o Google</li>
+            <li><svg><use href="#no"/></svg>Mensalidade da plataforma para sempre</li>
+            <li><svg><use href="#no"/></svg>Se cancelar o plano, o site some</li>
+          </ul>
+        </div>
+        <div class="c-good">
+          <span class="tag">Colombo Design</span>
+          <h3 style="margin-top:12px">Eu faço por você</h3>
+          <ul>
+            <li><svg><use href="#ok"/></svg>Design exclusivo, criado para o seu público</li>
+            <li><svg><use href="#ok"/></svg>Textos que explicam seu serviço e levam ao contato</li>
+            <li><svg><use href="#ok"/></svg>Código leve, que abre em menos de 1 segundo</li>
+            <li><svg><use href="#ok"/></svg>Hospedagem gratuita na maioria dos projetos</li>
+            <li><svg><use href="#ok"/></svg>O site e o domínio ficam no seu nome</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Serviços</span>
+        <h2 class="h2">O formato certo para o momento do seu negócio.</h2>
+        <p class="lead">Todos os projetos têm valor fechado antes de começar. Sem surpresa no meio do caminho.</p>
+      </div>
+      <div class="services">
+        <article class="svc featured">
+          <div class="svc-top"><span class="kind">Mais pedido</span><span class="time">a partir de 7 dias</span></div>
+          <h3>Landing page de vendas</h3>
+          <div>
+            <p>Uma página única e focada em um objetivo: fazer o visitante chamar você no WhatsApp ou comprar. Ideal para anúncios, lançamentos e para quem precisa estar no ar rápido.</p>
+            <ul>
+              <li>Estrutura persuasiva, do problema à chamada para ação</li>
+              <li>Botões de WhatsApp com mensagem pronta</li>
+              <li>Pronta para Google Ads e Meta Ads</li>
+            </ul>
+          </div>
+          <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-wa" data-wa="landing" href="#"><svg><use href="#wa"/></svg>Pedir orçamento</a></div>
+        </article>
+        <article class="svc">
+          <div class="svc-top"><span class="kind">Presença completa</span><span class="time">a partir de 15 dias</span></div>
+          <h3>Site institucional</h3>
+          <div>
+            <p>Um site com várias páginas para apresentar sua empresa ou consultório com autoridade: quem você é, o que faz, onde atende e como falar com você.</p>
+            <ul>
+              <li>Até 5 páginas: início, sobre, serviços, contato e mais uma</li>
+              <li>Integração com Google Meu Negócio e mapa</li>
+              <li>Página de serviços detalhada, uma para cada especialidade</li>
+            </ul>
+          </div>
+          <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-ghost" data-wa="institucional" href="#">Pedir orçamento</a></div>
+        </article>
+        <article class="svc">
+          <div class="svc-top"><span class="kind">Profissional liberal</span><span class="time">a partir de 7 dias</span></div>
+          <h3>Página profissional</h3>
+          <div>
+            <p>Seu cartão de visitas na internet. Para advogados, médicos, psicólogos, dentistas e consultores que querem ser encontrados e passar confiança logo no primeiro clique.</p>
+            <ul>
+              <li>Apresentação, formação e áreas de atuação</li>
+              <li>Link pronto para a bio do Instagram</li>
+              <li>Textos alinhados às regras do seu conselho profissional</li>
+            </ul>
+          </div>
+          <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-ghost" data-wa="profissional" href="#">Pedir orçamento</a></div>
+        </article>
+        <article class="svc">
+          <div class="svc-top"><span class="kind">Já tem site?</span><span class="time">sob demanda</span></div>
+          <h3>Redesenho e manutenção</h3>
+          <div>
+            <p>Seu site está antigo, lento ou com cara de amador? Eu refaço o visual, melhoro a velocidade e cuido das atualizações para você não se preocupar.</p>
+            <ul>
+              <li>Novo design aproveitando o conteúdo que você já tem</li>
+              <li>Migração para hospedagem mais rápida e barata</li>
+              <li>Ajustes de texto, fotos e novas seções</li>
+            </ul>
+          </div>
+          <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-ghost" data-wa="redesenho" href="#">Pedir orçamento</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Incluso em todo projeto</span>
+        <h2 class="h2">Tudo o que um site profissional precisa ter.</h2>
+      </div>
+      <div class="incl">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><h3>Perfeito no celular</h3><p>Mais de 70% das visitas vêm do smartphone. O layout é pensado para ele primeiro.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6l1-8Z"/></svg><h3>Carregamento rápido</h3><p>Código limpo e imagens otimizadas para nota alta no PageSpeed do Google.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="m20.5 20.5-4.8-4.8"/></svg><h3>Pronto para o Google</h3><p>Títulos, descrições e estrutura configurados para você ser encontrado.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5 5.3 15A8 8 0 1 1 9 18.7L4 19.5Z"/></svg><h3>Botões de WhatsApp</h3><p>Contato a um toque, com mensagem pronta para o cliente só apertar enviar.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><h3>Cadeado de segurança</h3><p>Certificado SSL incluso. O navegador mostra seu site como seguro.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3>Métricas de visitas</h3><p>Google Analytics configurado para você saber quantas pessoas chegam.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><h3>Domínio próprio</h3><p>Ajudo a registrar o seu .com.br e deixo tudo no seu nome.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7.5-4.6-7.5-11A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 6.4-7.5 11-7.5 11Z"/></svg><h3>Suporte após a entrega</h3><p>30 dias de ajustes inclusos depois que o site vai ao ar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Portfólio</span>
+        <h2 class="h2">Sites reais, feitos do zero para cada cliente.</h2>
+        <p class="lead">Passe o mouse sobre as telas para rolar a página inteira. No celular, elas rolam sozinhas.</p>
+      </div>
+
+      <div class="cases">
+        <!-- Case 1: Smartchat (prints reais) -->
+        <article class="case">
+          <div class="devices">
+            <div class="frame">
+              <div class="bar"><i></i><i></i><i></i><span class="url">smarttchat.com.br</span></div>
+              <div class="screen" tabindex="0" aria-label="Página do Smartchat no computador">
+                <div class="canvas"><div class="pg"><img src="img/smartchat-desktop.jpg" width="1000" height="5000" alt="Página completa do site Smartchat" loading="lazy"></div></div>
+              </div>
+            </div>
+            <div class="phone-shell"><div class="screen"><div class="canvas"><div class="pg"><img src="img/smartchat-mobile.jpg" width="390" height="844" alt="Site Smartchat no celular" loading="lazy"></div></div></div></div>
+            <span class="hint">↕ passe o mouse para rolar</span>
+          </div>
+          <div class="case-info">
+            <div class="case-tag"><span class="pill live">No ar</span><span class="pill">Tecnologia · SaaS</span></div>
+            <h3>Smartchat</h3>
+            <p>Landing page para uma plataforma de atendimento com inteligência artificial no WhatsApp. Visual escuro e tecnológico, com painel e celular em destaque para mostrar o produto funcionando logo na primeira dobra.</p>
+            <div class="facts">
+              <div><b>Landing</b><small>página única de vendas</small></div>
+              <div><b>B2B</b><small>empresas de vários setores</small></div>
+              <div><b>WhatsApp</b><small>em todas as chamadas</small></div>
+            </div>
+            <div class="chips"><span>Design de interface</span><span>Copy de vendas</span><span>Depoimentos</span><span>Mobile first</span></div>
+            <a class="case-link" href="https://smarttchat.com.br/" target="_blank" rel="noopener">Visitar o site ↗</a>
+          </div>
+        </article>
+
+        <!-- Case 2: AquaVL (recriação fiel em HTML) -->
+        <article class="case flip">
+          <div class="devices">
+            <div class="frame">
+              <div class="bar"><i></i><i></i><i></i><span class="url">aquavl.com.au</span></div>
+              <div class="screen" tabindex="0" aria-label="Página da AquaVL no computador">
+                <div class="canvas"><div class="pg"><img src="img/aquavl-desktop.jpg" width="1000" height="625" alt="Página inicial do site AquaVL Property Care" loading="lazy"></div></div>
+              </div>
+            </div>
+            <div class="phone-shell"><div class="screen"><div class="canvas"><div class="pg avm">
+              <div class="avm-nav"><span class="avm-logo">AquaVL<small>Property Care</small></span><span class="avm-burger"><i></i><i></i><i></i></span></div>
+              <span class="avm-eye">Adelaide's Trusted Cleaning Specialists</span>
+              <h5>Premium Exterior Cleaning <em>for Homes &amp; Businesses</em></h5>
+              <p>Residential &amp; Commercial Services Across Adelaide. We bring precision, reliability, and outstanding results to every property we touch.</p>
+              <span class="avm-btn">Get a Free Quote</span>
+              <span class="avm-btn o">Call Now</span>
+              <div class="avm-badges"><span>Fully Insured</span><span>Free Quotes</span><span>Residential &amp; Commercial</span><span>Adelaide Based</span></div>
+            </div></div></div></div>
+            </div>
+          <div class="case-info">
+            <div class="case-tag"><span class="pill live">No ar</span><span class="pill">Serviços · Austrália</span></div>
+            <h3>AquaVL Property Care</h3>
+            <p>Site institucional completo para uma empresa de limpeza de fachadas em Adelaide. Depoimentos reais, seis serviços, galeria de antes e depois e formulário de orçamento para transformar visita em pedido.</p>
+            <div class="facts">
+              <div><b>Institucional</b><small>site com várias seções</small></div>
+              <div><b>Inglês</b><small>feito para o mercado australiano</small></div>
+              <div><b>Orçamento</b><small>formulário e botão de ligação</small></div>
+            </div>
+            <div class="chips"><span>Antes e depois</span><span>Página de serviços</span><span>SEO local</span><span>Formulário</span></div>
+            <a class="case-link" href="https://aquavl.com.au/" target="_blank" rel="noopener">Visitar o site ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="concepts-head">
+        <h3>Conceitos para o seu segmento</h3>
+        <p>Estudos de layout que mostram como a sua página pode ficar. Cada projeto real é criado do zero, com a sua marca e as suas fotos.</p>
+      </div>
+      <div class="cases">
+        <!-- Conceito: clínica odontológica -->
+        <article class="case">
+          <div class="devices">
+            <div class="frame">
+              <div class="bar"><i></i><i></i><i></i><span class="url">clinicasorrir.com.br</span></div>
+              <div class="screen" tabindex="0" aria-label="Conceito de site para clínica odontológica">
+                <div class="canvas"><div class="pg mk cs">
+                  <div class="cs-nav"><span class="cs-logo"><i></i>Clínica Sorrir</span><span class="cs-links"><span>Tratamentos</span><span>A clínica</span><span>Equipe</span><span>Depoimentos</span><span>Contato</span></span><span class="cs-btn">Agendar avaliação</span></div>
+                  <div class="cs-hero">
+                    <div>
+                      <span class="cs-eye">Odontologia estética e implantes · Porto Alegre</span>
+                      <h5>Seu sorriso cuidado com <em>calma e precisão.</em></h5>
+                      <p>Atendimento sem pressa, tecnologia digital e um plano de tratamento explicado do começo ao fim.</p>
+                      <div class="row" style="gap:12px"><span class="cs-btn wa">Agendar pelo WhatsApp</span><span class="cs-btn ghost">Ver tratamentos</span></div>
+                      <div class="cs-rate"><b>4,9 ★★★★★</b><span>nota média no Google</span></div>
+                    </div>
+                    <div class="cs-photo"><img src="img/odonto-clinica.jpg" alt=""><div class="cs-card"><b>Raio-x digital</b>incluso na primeira avaliação</div></div>
+                  </div>
+                  <div class="cs-trust"><span>Convênios aceitos</span><b>Odontoprev</b><b>Amil Dental</b><b>Bradesco Dental</b><b>SulAmérica</b><b>Uniodonto</b></div>
+                  <div class="cs-sec">
+                    <h6 class="cs-h">Tratamentos mais procurados</h6>
+                    <div class="cs-svcs">
+                      <div class="cs-svc"><img src="img/odonto-alinhador.jpg" alt=""><div><b>Alinhadores invisíveis</b><p>Ortodontia discreta, sem bráquetes, com planejamento digital do sorriso.</p><span>Saiba mais →</span></div></div>
+                      <div class="cs-svc"><img src="img/odonto-exame.jpg" alt=""><div><b>Clareamento e limpeza</b><p>Dentes mais brancos e saudáveis em poucas sessões, com acompanhamento.</p><span>Saiba mais →</span></div></div>
+                      <div class="cs-svc"><img src="img/odonto-dentista.jpg" alt=""><div><b>Implantes</b><p>Tomografia e guia cirúrgico para uma recuperação mais confortável.</p><span>Saiba mais →</span></div></div>
+                    </div>
+                  </div>
+                  <div class="cs-stats"><div><b>12</b><small>anos de clínica</small></div><div><b>3 mil+</b><small>pacientes atendidos</small></div><div><b>4,9</b><small>nota no Google</small></div><div><b>Sáb.</b><small>atendimento até 13h</small></div></div>
+                  <div class="cs-sec">
+                    <h6 class="cs-h">O que dizem nossos pacientes</h6>
+                    <div class="cs-test">
+                      <div><span class="st">★★★★★</span><p>“Tinha medo de dentista e saí tranquila. Explicaram cada etapa do tratamento.”</p><b>Paciente de alinhadores</b></div>
+                      <div><span class="st">★★★★★</span><p>“Fiz implante e quase não senti nada. Equipe muito atenciosa e pontual.”</p><b>Paciente de implante</b></div>
+                    </div>
+                  </div>
+                  <div class="cs-cta"><h5>Agende sua avaliação sem compromisso.</h5><span>Falar no WhatsApp</span></div>
+                </div></div>
+              </div>
+            </div>
+            <div class="phone-shell"><div class="screen"><div class="canvas"><div class="pg mk csm">
+              <div class="cs-nav"><span class="cs-logo"><i></i>Clínica Sorrir</span><span class="avm-burger dark"><i></i><i></i><i></i></span></div>
+              <img src="img/odonto-clinica.jpg" alt="">
+              <span class="cs-eye">Odontologia estética e implantes</span>
+              <h5>Seu sorriso cuidado com <em>calma e precisão.</em></h5>
+              <p>Atendimento sem pressa e um plano de tratamento explicado do começo ao fim.</p>
+              <span class="cs-btn wa">Agendar pelo WhatsApp</span>
+              <div class="cs-rate"><b>4,9 ★★★★★</b><span>no Google</span></div>
+            </div></div></div></div>
+            <span class="hint">↕ passe o mouse para rolar</span>
+          </div>
+          <div class="case-info">
+            <div class="case-tag"><span class="pill">Conceito</span><span class="pill">Saúde · Odontologia</span></div>
+            <h3>Clínica odontológica</h3>
+            <p>Página leve e acolhedora para consultórios e clínicas. Fotos do ambiente, tratamentos explicados de forma simples, convênios aceitos e agendamento pelo WhatsApp em cada seção.</p>
+            <div class="facts">
+              <div><b>Agenda</b><small>pedido de horário pelo WhatsApp</small></div>
+              <div><b>Confiança</b><small>avaliações e convênios</small></div>
+              <div><b>CRO</b><small>textos dentro das regras do conselho</small></div>
+            </div>
+            <div class="chips"><span>Médicos</span><span>Dentistas</span><span>Psicólogos</span><span>Nutricionistas</span><span>Clínicas</span></div>
+          </div>
+        </article>
+
+        <!-- Conceito: advocacia -->
+        <article class="case flip">
+          <div class="devices">
+            <div class="frame">
+              <div class="bar"><i></i><i></i><i></i><span class="url">almeidaadvocacia.adv.br</span></div>
+              <div class="screen" tabindex="0" aria-label="Conceito de site para escritório de advocacia">
+                <div class="canvas"><div class="pg mk al">
+                  <div class="al-nav"><span class="al-logo">Almeida<small>Advocacia</small></span><span class="al-links"><span>Áreas de atuação</span><span>O escritório</span><span>Artigos</span><span>Contato</span></span><span class="al-btn">Agendar consulta</span></div>
+                  <div class="al-hero">
+                    <div>
+                      <span class="al-eye">Direito de família e sucessões</span>
+                      <h5>Momentos delicados pedem <em>orientação</em> segura.</h5>
+                      <p>Atuação em divórcios, guarda, pensão e inventários, com discrição e acompanhamento próximo em cada fase do processo.</p>
+                      <div class="row" style="gap:12px"><span class="al-btn f">Falar com a advogada</span><span class="al-btn">Áreas de atuação</span></div>
+                      <div class="al-cred"><span><b>15 anos</b>de atuação</span><span><b>OAB/RS</b>000.000</span><span><b>Online</b>e presencial</span></div>
+                    </div>
+                    <div class="al-port"><img src="img/adv-retrato.jpg" alt=""><span class="al-sig">Dra. Marina Almeida</span></div>
+                  </div>
+                  <div class="al-sec">
+                    <h6 class="al-h">Áreas de atuação</h6>
+                    <div class="al-areas">
+                      <div><span>I</span><b>Divórcio</b><p>Consensual ou litigioso, judicial ou em cartório.</p></div>
+                      <div><span>II</span><b>Guarda</b><p>Guarda compartilhada e regulamentação de visitas.</p></div>
+                      <div><span>III</span><b>Pensão</b><p>Fixação, revisão e execução de alimentos.</p></div>
+                      <div><span>IV</span><b>Inventário</b><p>Partilha de bens com agilidade e segurança.</p></div>
+                    </div>
+                  </div>
+                  <div class="al-quote"><img src="img/adv-biblioteca.jpg" alt=""><div><p>“Cada família é única. Por isso, cada caso recebe uma estratégia própria.”</p><small>Dra. Marina Almeida</small></div></div>
+                  <div class="al-sec al-how">
+                    <img src="img/adv-assinatura.jpg" alt="">
+                    <div>
+                      <h6 class="al-h">Como funciona o atendimento</h6>
+                      <div class="al-steps">
+                        <div><i>01</i><b>Conversa inicial</b><p>Você explica a situação com total sigilo, presencialmente ou por vídeo.</p></div>
+                        <div><i>02</i><b>Análise do caso</b><p>Apresento os caminhos possíveis, os prazos e os custos.</p></div>
+                        <div><i>03</i><b>Acompanhamento</b><p>Você recebe notícias a cada movimentação do processo.</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="al-cta"><img src="img/adv-justica.jpg" alt=""><div><h5>Agende uma consulta reservada.</h5><span class="al-btn f">Falar no WhatsApp</span></div></div>
+                  <div class="al-foot"><span>Almeida Advocacia · OAB/RS 000.000</span><span>Porto Alegre · RS</span></div>
+                </div></div>
+              </div>
+            </div>
+            <div class="phone-shell"><div class="screen"><div class="canvas"><div class="pg mk alm">
+              <div class="al-nav"><span class="al-logo">Almeida<small>Advocacia</small></span><span class="avm-burger gold"><i></i><i></i><i></i></span></div>
+              <div class="al-port"><img src="img/adv-retrato.jpg" alt=""><span class="al-sig">Dra. Marina Almeida</span></div>
+              <span class="al-eye">Direito de família e sucessões</span>
+              <h5>Momentos delicados pedem <em>orientação</em> segura.</h5>
+              <span class="al-btn f">Falar com a advogada</span>
+            </div></div></div></div>
+            <span class="hint">↕ passe o mouse para rolar</span>
+          </div>
+          <div class="case-info">
+            <div class="case-tag"><span class="pill">Conceito</span><span class="pill">Jurídico · Advocacia</span></div>
+            <h3>Escritório de advocacia</h3>
+            <p>Visual sóbrio e elegante para advogados e escritórios. Retrato profissional, áreas de atuação claras e um processo de atendimento que passa segurança, sem promessas proibidas.</p>
+            <div class="facts">
+              <div><b>Sóbrio</b><small>serifa clássica e tons escuros</small></div>
+              <div><b>Sigilo</b><small>contato reservado pelo WhatsApp</small></div>
+              <div><b>OAB</b><small>dentro do Provimento 205/2021</small></div>
+            </div>
+            <div class="chips"><span>Advogados</span><span>Contadores</span><span>Consultores</span><span>Arquitetos</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="como-funciona" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="h2">Do primeiro “oi” ao site no ar.</h2>
+        <p class="lead">Um processo simples, em que você só precisa responder algumas perguntas e aprovar o resultado.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Conversa</h3><p>Você me chama no WhatsApp, conta sobre seu negócio e o que precisa.</p><small>15 minutos</small></div>
+        <div class="step"><h3>Proposta</h3><p>Envio o escopo, o prazo e o valor fechado. Nada começa sem a sua aprovação.</p><small>em até 24 h</small></div>
+        <div class="step"><h3>Criação</h3><p>Desenho o layout e escrevo os textos. Você acompanha e pede ajustes.</p><small>7 a 15 dias</small></div>
+        <div class="step"><h3>No ar</h3><p>Publico no seu domínio, configuro o Google e entrego tudo no seu nome.</p><small>+30 dias de suporte</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap faq-grid">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">Dúvidas</span>
+        <h2 class="h2">Perguntas que todo mundo faz antes de começar.</h2>
+        <p class="lead">Não achou sua dúvida? Pergunte direto no WhatsApp.</p>
+      </div>
+      <div>
+        <details><summary>Quanto custa um site?</summary><p>Depende do formato e do número de páginas, mas o investimento é acessível e pensado para profissionais liberais e pequenas empresas. Você recebe o valor fechado na proposta, antes de qualquer trabalho começar.</p></details>
+        <details><summary>Vou pagar mensalidade?</summary><p>Não para mim. Na maioria dos projetos a hospedagem é gratuita, e o único custo recorrente é o domínio (.com.br custa cerca de R$ 40 por ano, pago direto ao Registro.br).</p></details>
+        <details><summary>Em quanto tempo o site fica pronto?</summary><p>Uma landing page fica pronta a partir de 7 dias. Um site institucional leva em média 15 dias. O prazo começa quando recebo seus textos, fotos e logotipo, ou quando combinamos que eu os produza.</p></details>
+        <details><summary>Não tenho textos nem fotos. E agora?</summary><p>Sem problema. Eu escrevo os textos a partir de uma conversa com você e posso usar imagens profissionais de bancos licenciados até você ter fotos próprias.</p></details>
+        <details><summary>Consigo alterar o site depois?</summary><p>Sim. Os primeiros 30 dias de ajustes estão inclusos. Depois disso, você pode pedir alterações pontuais ou contratar a manutenção mensal.</p></details>
+        <details><summary>O site fica no meu nome?</summary><p>Fica. O domínio é registrado no seu CPF ou CNPJ e você recebe todos os acessos. O site é seu, sem amarras.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="final-box">
+        <div>
+          <h2>Vamos colocar seu negócio no lugar certo da internet?</h2>
+          <p>Me conte o que você faz e eu mostro como o seu site pode ficar. A conversa é sem compromisso.</p>
+        </div>
+        <div>
+          <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg>Falar com o designer</a>
+          <p class="num">(51) 99897-4961</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#topo">colombo<i></i><small>design</small></a>
+    <span>Sites e landing pages sob medida · Atendimento em todo o Brasil</span>
+    <span>© <span id="ano">2026</span> Colombo Design · colombodesign.com.br</span>
+  </div>
+</footer>
+
+<a class="fab" data-wa="geral" href="#" aria-label="Falar com o designer no WhatsApp"><svg><use href="#wa"/></svg><span>Falar com o designer</span></a>
+
+<script>
+(function(){
+  var numero = "5551998974961";
+  var msgs = {
+    geral: "Olá! Vim pelo site da Colombo Design e quero um site profissional para o meu negócio. Pode me contar como funciona?",
+    landing: "Olá! Tenho interesse em uma landing page de vendas. Pode me passar um orçamento?",
+    institucional: "Olá! Quero um site institucional para minha empresa. Pode me passar um orçamento?",
+    profissional: "Olá! Sou profissional liberal e quero uma página profissional. Pode me passar um orçamento?",
+    redesenho: "Olá! Já tenho um site e quero renovar o visual. Pode me ajudar?"
+  };
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    var m = msgs[a.getAttribute("data-wa")] || msgs.geral;
+    a.href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(m);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  var y = document.getElementById("ano"); if (y) y.textContent = new Date().getFullYear();
+
+  // Telas do portfólio: escala o desenho de 1000px (ou 390px) para a moldura e calcula quanto rolar
+  function fit(){
+    document.querySelectorAll(".screen").forEach(function(sc){
+      var cv = sc.querySelector(".canvas"), pg = sc.querySelector(".pg");
+      if (!cv || !pg) return;
+      var s = sc.clientWidth / cv.offsetWidth;
+      cv.style.setProperty("--s", s);
+      var travel = Math.max(0, pg.offsetHeight - sc.clientHeight / s);
+      pg.style.setProperty("--travel", travel + "px");
+      pg.style.transitionDuration = Math.min(12, Math.max(3, travel / 450)) + "s";
+    });
+  }
+  fit();
+  window.addEventListener("load", fit);
+  window.addEventListener("resize", fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(document.body);
+})();
+</script>
+
+</html>
