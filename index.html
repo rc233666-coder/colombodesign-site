@@ -128,6 +128,53 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.stage{max-width:560px}}
 @media (max-width:520px){.chip-a{left:-4px}.chip-b{right:-4px}.phone{display:none}}
 
+
+/* Herói: site de arquitetura realista */
+.stage .browser .screen{aspect-ratio:16/11}
+.screen.auto .pg{animation:pan 22s ease-in-out 2s infinite alternate}
+.stage .hero-phone{right:-8px;bottom:-4px;width:clamp(96px,24%,150px)}
+.lu{background:#F4F1EC;color:#1E1C1A;font-family:var(--body)}
+.lu-hero{position:relative;height:560px;color:#fff}
+.lu-hero>img{position:absolute;inset:0}
+.lu-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.05) 35%,rgba(0,0,0,.55))}
+.lu-nav{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:24px 48px}
+.lu-logo{font:700 22px/1 var(--display);letter-spacing:.28em}
+.lu-logo small{display:block;font:400 10px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-top:6px}
+.lu-links{display:flex;gap:26px;font-size:14px;opacity:.9}
+.lu-btn{display:inline-block;font:600 14px/1 var(--body);padding:13px 20px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);color:#fff}
+.lu-btn.wa{background:#1FA855;border-color:#1FA855}
+.lu-copy{position:absolute;z-index:1;left:48px;bottom:46px;max-width:560px}
+.lu-eye{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.lu-eye.dark{color:#8A6D4B;opacity:1}
+.lu-copy h5{text-shadow:0 2px 18px rgba(0,0,0,.55);margin:14px 0 22px;font:700 52px/1.02 var(--display);letter-spacing:-.03em}
+.lu-sec{padding:56px 48px}
+.lu-head{display:flex;justify-content:space-between;align-items:baseline}
+.lu-head h6,.lu-about h6,.lu-cta h6{margin:0;font:700 34px/1.08 var(--display);letter-spacing:-.02em}
+.lu-head span{font-size:14px;color:#8A6D4B;font-weight:600}
+.lu-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:200px 200px;gap:14px;margin-top:26px}
+.lu-grid div{position:relative;border-radius:14px;overflow:hidden}
+.lu-grid .big{grid-row:span 2}
+.lu-grid span{position:absolute;left:14px;bottom:12px;font-size:13px;font-weight:600;color:#fff;background:rgba(0,0,0,.45);padding:7px 10px;border-radius:999px}
+.lu-about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:0 48px 56px}
+.lu-about>img{height:330px;border-radius:14px}
+.lu-about h6{margin-top:12px}
+.lu-about p{color:#5E5750;font-size:15.5px;margin:14px 0 20px}
+.lu-nums{display:flex;gap:30px;font-size:13px;color:#5E5750}
+.lu-nums b{display:block;font:700 26px/1.1 var(--display);color:#1E1C1A}
+.lu-cta{position:relative;height:240px;margin:0 48px 48px;border-radius:18px;overflow:hidden;color:#fff}
+.lu-cta>img{position:absolute;inset:0;filter:brightness(.5)}
+.lu-cta>div{position:relative;height:100%;display:flex;justify-content:space-between;align-items:center;padding:0 40px}
+.lu-cta h6{max-width:15ch}
+.lum{background:#F4F1EC;color:#1E1C1A}
+.lum .lu-hero{height:600px}
+.lum .lu-nav{padding:18px 20px}
+.lum .lu-copy{left:20px;right:20px;bottom:28px}
+.lum .lu-copy h5{font-size:38px}
+.lum .lu-btn.wa{display:block;text-align:center;padding:16px;font-size:15px}
+.lum-list{display:grid;gap:10px;padding:20px}
+.lum-list img{height:200px;border-radius:12px}
+.lum-list span{font-size:14px;font-weight:600;margin-bottom:8px}
+
 /* Faixa de profissões */
 .ticker{border-block:1px solid var(--line);background:var(--surface);overflow:hidden}
 .ticker-in{display:flex;gap:44px;padding-block:20px;width:max-content;animation:roll 38s linear infinite;font:500 clamp(16px,1.6vw,19px)/1 var(--display);color:var(--muted)}
@@ -445,19 +492,32 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
 
       <div class="stage" aria-hidden="true">
         <div class="browser">
-          <div class="bar"><i></i><i></i><i></i><span class="url">https://www.seunegocio.com.br</span></div>
-          <div class="mock">
-            <div class="mnav"><span class="mlogo">Dra. Helena Prado</span><span class="mlinks"><i></i><i></i><i></i></span></div>
-            <div class="mt">Odontologia estética com atendimento humano.</div>
-            <div class="ml" style="width:78%"></div>
-            <div class="ml" style="width:56%"></div>
-            <span class="mbtn">Agendar pelo WhatsApp</span>
-            <div class="mcards"><div></div><div></div><div></div></div>
+          <div class="bar"><i></i><i></i><i></i><span class="url">lumearquitetura.com.br</span></div>
+          <div class="screen auto">
+            <div class="canvas"><div class="pg mk lu">
+              <div class="lu-hero"><img src="img/arq-casa.jpg" alt="">
+                <div class="lu-nav"><span class="lu-logo">LUME<small>arquitetura &amp; interiores</small></span><span class="lu-links"><span>Projetos</span><span>Estúdio</span><span>Processo</span><span>Contato</span></span><span class="lu-btn">Orçar meu projeto</span></div>
+                <div class="lu-copy"><span class="lu-eye">Residencial · Interiores · Reformas</span><h5>Casas pensadas para a forma como você vive.</h5><span class="lu-btn wa">Conversar pelo WhatsApp</span></div>
+              </div>
+              <div class="lu-sec"><div class="lu-head"><h6>Projetos recentes</h6><span>Ver todos →</span></div>
+                <div class="lu-grid">
+                  <div class="big"><img src="img/arq-living.jpg" alt=""><span>Casa Bela Vista · 320 m²</span></div>
+                  <div><img src="img/arq-fachada.jpg" alt=""><span>Residência Moinhos</span></div>
+                  <div><img src="img/arq-sala.jpg" alt=""><span>Apto. Petrópolis</span></div>
+                </div>
+              </div>
+              <div class="lu-about"><img src="img/arq-estar.jpg" alt=""><div><span class="lu-eye dark">O estúdio</span><h6>Do primeiro traço à entrega da chave.</h6><p>Projeto arquitetônico, interiores e acompanhamento de obra com um único time.</p><div class="lu-nums"><span><b>140+</b>projetos</span><span><b>12</b>anos</span><span><b>4,9 ★</b>Google</span></div></div></div>
+              <div class="lu-cta"><img src="img/arq-poltrona.jpg" alt=""><div><h6>Vamos desenhar o seu próximo espaço?</h6><span class="lu-btn wa">Falar com a arquiteta</span></div></div>
+            </div></div>
           </div>
         </div>
         <div class="chip chip-b"><span class="ring"><span>98</span></span><span>Nota de velocidade<br>no Google</span></div>
         <div class="chip chip-a"><span><strong>0,9 s</strong>para abrir no celular</span></div>
-        <div class="phone"><div><b>Dra. Helena Prado</b><i style="width:90%"></i><i style="width:70%"></i><em>WhatsApp</em><i style="width:80%"></i><i style="width:60%"></i></div></div>
+        <div class="phone-shell hero-phone"><div class="screen auto"><div class="canvas"><div class="pg mk lum">
+          <div class="lu-hero"><img src="img/arq-casa.jpg" alt=""><div class="lu-nav"><span class="lu-logo">LUME<small>arquitetura</small></span><span class="avm-burger"><i></i><i></i><i></i></span></div>
+          <div class="lu-copy"><span class="lu-eye">Residencial · Interiores</span><h5>Casas pensadas para a forma como você vive.</h5><span class="lu-btn wa">Conversar pelo WhatsApp</span></div></div>
+          <div class="lum-list"><img src="img/arq-living.jpg" alt=""><span>Casa Bela Vista · 320 m²</span><img src="img/arq-sala.jpg" alt=""><span>Apto. Petrópolis</span></div>
+        </div></div></div></div>
       </div>
     </div>
   </section>
