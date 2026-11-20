@@ -6,7 +6,7 @@ Landing page estática (HTML, CSS e JS puros, sem build) de **colombodesign.com.
 
 | Arquivo | Para que serve |
 |---|---|
-| `index.html` | O site. É o único arquivo que o navegador abre. |
+| `public/index.html` | O site. É o único arquivo que o navegador abre. |
 | `img/` | Prints do portfólio |
 | `favicon.svg`, `apple-touch-icon.png` | Ícone da aba e do celular |
 | `og.jpg` | Imagem que aparece quando o link é compartilhado no WhatsApp e nas redes |
