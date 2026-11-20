@@ -407,15 +407,23 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 /* Processo */
 .band{background:var(--band);color:var(--band-ink)}
 .band .lead{color:var(--band-muted)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid color-mix(in srgb,var(--band-ink) 18%,transparent)}
-.step{padding:28px 24px 8px 0;min-width:0;position:relative}
-.step::before{counter-increment:s;content:"0" counter(s);font:500 13px/1 var(--mono);color:var(--accent);display:block;margin-bottom:22px}
-.step::after{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:2px;background:var(--accent)}
-.step h3{font-size:22px;font-weight:700}
-.step p{color:var(--band-muted);margin-top:10px;font-size:15.5px}
-.step small{display:block;margin-top:14px;font:500 12px/1 var(--mono);color:var(--brass)}
-@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr);row-gap:24px}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.how{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.how>*{min-width:0}
+.how-intro{position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px);display:grid;gap:0}
+.how-intro .sec-head{margin-bottom:28px}
+.how-intro .btn{justify-self:start}
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.tl{display:grid;grid-template-columns:52px 1fr;gap:0 20px;position:relative;padding-bottom:30px}
+.tl:last-child{padding-bottom:0}
+.tl::before{counter-increment:s;content:counter(s);grid-row:span 3;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 19px/1 var(--display);color:var(--accent);background:var(--band);border:1.5px solid var(--accent);position:relative;z-index:1}
+.tl::after{content:"";position:absolute;left:25px;top:52px;bottom:0;width:2px;background:linear-gradient(var(--accent),color-mix(in srgb,var(--accent) 20%,transparent))}
+.tl:last-child::after{display:none}
+.tl:last-child::before{background:var(--accent);color:var(--accent-ink)}
+.tl h3{font-size:22px;font-weight:700;padding-top:4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.tl h3 small{font:500 12px/1 var(--mono);color:var(--brass);padding:5px 9px;border:1px solid color-mix(in srgb,var(--brass) 45%,transparent);border-radius:999px}
+.tl p{color:var(--band-muted);margin-top:8px;font-size:15.5px;max-width:46ch}
+@media (max-width:860px){.how{grid-template-columns:1fr}.how-intro{position:static}.how-intro .btn{display:none}}
+@media (max-width:480px){.tl{grid-template-columns:42px 1fr;gap:0 14px;padding-bottom:24px}.tl::before{width:42px;height:42px;font-size:16px}.tl::after{left:20px;top:42px}.tl h3{font-size:19px}.tl p{font-size:15px}}
 
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start}
@@ -852,18 +860,21 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
     </div>
   </section>
   <section id="como-funciona" class="band">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Como funciona</span>
-        <h2 class="h2">Do primeiro “oi” ao site no ar.</h2>
-        <p class="lead">Um processo simples, em que você só precisa responder algumas perguntas e aprovar o resultado.</p>
+    <div class="wrap how">
+      <div class="how-intro">
+        <div class="sec-head">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="h2">Do primeiro “oi” ao site no ar.</h2>
+          <p class="lead">Um processo simples, em que você só precisa responder algumas perguntas e aprovar o resultado.</p>
+        </div>
+        <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg>Começar pelo WhatsApp</a>
       </div>
-      <div class="steps">
-        <div class="step"><h3>Conversa</h3><p>Você me chama no WhatsApp, conta sobre seu negócio e o que precisa.</p><small>15 minutos</small></div>
-        <div class="step"><h3>Proposta</h3><p>Envio o escopo, o prazo e o valor fechado. Nada começa sem a sua aprovação.</p><small>em até 24 h</small></div>
-        <div class="step"><h3>Criação</h3><p>Desenho o layout e escrevo os textos. Você acompanha e pede ajustes.</p><small>7 a 15 dias</small></div>
-        <div class="step"><h3>No ar</h3><p>Publico no seu domínio, configuro o Google e entrego tudo no seu nome.</p><small>+30 dias de suporte</small></div>
-      </div>
+      <ol class="timeline">
+        <li class="tl"><h3>Conversa <small>15 minutos</small></h3><p>Você me chama no WhatsApp, conta sobre seu negócio e o que precisa.</p></li>
+        <li class="tl"><h3>Proposta <small>em até 24 h</small></h3><p>Envio o escopo, o prazo e o valor fechado. Nada começa sem a sua aprovação.</p></li>
+        <li class="tl"><h3>Criação <small>7 a 15 dias</small></h3><p>Desenho o layout e escrevo os textos. Você acompanha e pede ajustes.</p></li>
+        <li class="tl"><h3>No ar <small>+30 dias de suporte</small></h3><p>Publico no seu domínio, configuro o Google e entrego tudo no seu nome.</p></li>
+      </ol>
     </div>
   </section>
 
