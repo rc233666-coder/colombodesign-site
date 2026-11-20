@@ -175,6 +175,17 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 .lum-list img{height:200px;border-radius:12px}
 .lum-list span{font-size:14px;font-weight:600;margin-bottom:8px}
 
+/* Aviso de cookies */
+.cookie{position:fixed;z-index:70;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:min(440px,calc(100% - 32px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 24px 60px -24px rgba(0,0,0,.5)}
+.cookie[hidden]{display:none}
+.cookie h2{font:700 17px/1.2 var(--display);letter-spacing:-.01em}
+.cookie p{font-size:14px;line-height:1.5;color:var(--muted);margin-top:8px}
+.cookie p a{color:var(--accent)}
+.cookie-btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.cookie-btns .btn{padding:12px 18px;font-size:14px}
+.cookie-btns .btn-ok{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+@media (max-width:640px){.cookie{right:max(16px,env(safe-area-inset-right,0px));max-width:none;bottom:calc(88px + env(safe-area-inset-bottom,0px))}}
+
 /* Faixa de profissões */
 .ticker{border-block:1px solid var(--line);background:var(--surface);overflow:hidden}
 .ticker-in{display:flex;gap:44px;padding-block:20px;width:max-content;animation:roll 38s linear infinite;font:500 clamp(16px,1.6vw,19px)/1 var(--display);color:var(--muted)}
@@ -446,10 +457,12 @@ details p{color:var(--muted);padding:0 0 22px;max-width:62ch}
 .final-box h2{font-size:clamp(34px,5vw,62px);font-weight:800;max-width:15ch}
 .final-box p{margin-top:16px;opacity:.85;max-width:48ch}
 .final-box .btn-wa{background:var(--accent-ink);color:var(--accent);box-shadow:none}
+.final-box .fine{font-size:12.5px;line-height:1.4;margin-top:10px;opacity:.8;text-align:center;max-width:none}.final-box .fine a{color:inherit}
 .final-box .num{font:500 13px/1 var(--mono);margin-top:14px;opacity:.8;text-align:center}
 @media (max-width:760px){.final-box{grid-template-columns:1fr}}
 
 footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;color:var(--muted)}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}.foot-links a,.foot-links button{color:var(--muted);font:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.foot-links a:hover,.foot-links button:hover{color:var(--ink)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
 
 /* WhatsApp flutuante */
@@ -492,7 +505,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
           <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
         </div>
         <div class="proof">
-          <span><svg><use href="#ok"/></svg>Pronto a partir de 7 dias</span>
+          <span><svg><use href="#ok"/></svg>Pronto em poucos dias</span>
           <span><svg><use href="#ok"/></svg>Sem mensalidade de plataforma</span>
           <span><svg><use href="#ok"/></svg>O site é 100% seu</span>
         </div>
@@ -580,7 +593,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
       </div>
       <div class="services">
         <article class="svc featured">
-          <div class="svc-top"><span class="kind">Mais pedido</span><span class="time">a partir de 7 dias</span></div>
+          <div class="svc-top"><span class="kind">Mais pedido</span><span class="time">3 a 7 dias</span></div>
           <h3>Landing page de vendas</h3>
           <div>
             <p>Uma página única e focada em um objetivo: fazer o visitante chamar você no WhatsApp ou comprar. Ideal para anúncios, lançamentos e para quem precisa estar no ar rápido.</p>
@@ -593,7 +606,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
           <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-wa" data-wa="landing" href="#"><svg><use href="#wa"/></svg>Pedir orçamento</a></div>
         </article>
         <article class="svc">
-          <div class="svc-top"><span class="kind">Presença completa</span><span class="time">a partir de 15 dias</span></div>
+          <div class="svc-top"><span class="kind">Presença completa</span><span class="time">5 a 10 dias</span></div>
           <h3>Site institucional</h3>
           <div>
             <p>Um site com várias páginas para apresentar sua empresa ou consultório com autoridade: quem você é, o que faz, onde atende e como falar com você.</p>
@@ -606,7 +619,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
           <div class="svc-foot"><span class="price">Investimento<b>Acessível, sob consulta</b></span><a class="btn btn-ghost" data-wa="institucional" href="#">Pedir orçamento</a></div>
         </article>
         <article class="svc">
-          <div class="svc-top"><span class="kind">Profissional liberal</span><span class="time">a partir de 7 dias</span></div>
+          <div class="svc-top"><span class="kind">Profissional liberal</span><span class="time">5 a 7 dias</span></div>
           <h3>Página profissional</h3>
           <div>
             <p>Seu cartão de visitas na internet. Para advogados, médicos, psicólogos, dentistas e consultores que querem ser encontrados e passar confiança logo no primeiro clique.</p>
@@ -872,7 +885,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
       <ol class="timeline">
         <li class="tl"><h3>Conversa <small>15 minutos</small></h3><p>Você me chama no WhatsApp, conta sobre seu negócio e o que precisa.</p></li>
         <li class="tl"><h3>Proposta <small>em até 24 h</small></h3><p>Envio o escopo, o prazo e o valor fechado. Nada começa sem a sua aprovação.</p></li>
-        <li class="tl"><h3>Criação <small>7 a 15 dias</small></h3><p>Desenho o layout e escrevo os textos. Você acompanha e pede ajustes.</p></li>
+        <li class="tl"><h3>Criação <small>3 a 10 dias</small></h3><p>Desenho o layout e escrevo os textos. Você acompanha e pede ajustes.</p></li>
         <li class="tl"><h3>No ar <small>+30 dias de suporte</small></h3><p>Publico no seu domínio, configuro o Google e entrego tudo no seu nome.</p></li>
       </ol>
     </div>
@@ -888,7 +901,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
       <div>
         <details><summary>Quanto custa um site?</summary><p>Depende do formato e do número de páginas, mas o investimento é acessível e pensado para profissionais liberais e pequenas empresas. Você recebe o valor fechado na proposta, antes de qualquer trabalho começar.</p></details>
         <details><summary>Vou pagar mensalidade?</summary><p>Não para mim. Na maioria dos projetos a hospedagem é gratuita, e o único custo recorrente é o domínio (.com.br custa cerca de R$ 40 por ano, pago direto ao Registro.br).</p></details>
-        <details><summary>Em quanto tempo o site fica pronto?</summary><p>Uma landing page fica pronta a partir de 7 dias. Um site institucional leva em média 15 dias. O prazo começa quando recebo seus textos, fotos e logotipo, ou quando combinamos que eu os produza.</p></details>
+        <details><summary>Em quanto tempo o site fica pronto?</summary><p>Uma landing page fica pronta de 3 a 7 dias, uma página profissional de 5 a 7 dias e um site institucional de 5 a 10 dias. O prazo começa a contar quando recebo seus textos, fotos e logotipo, ou quando combinamos que eu os produza.</p></details>
         <details><summary>Não tenho textos nem fotos. E agora?</summary><p>Sem problema. Eu escrevo os textos a partir de uma conversa com você e posso usar imagens profissionais de bancos licenciados até você ter fotos próprias.</p></details>
         <details><summary>Consigo alterar o site depois?</summary><p>Sim. Os primeiros 30 dias de ajustes estão inclusos. Depois disso, você pode pedir alterações pontuais ou contratar a manutenção mensal.</p></details>
         <details><summary>O site fica no meu nome?</summary><p>Fica. O domínio é registrado no seu CPF ou CNPJ e você recebe todos os acessos. O site é seu, sem amarras.</p></details>
@@ -906,6 +919,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
         <div>
           <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg>Falar com o designer</a>
           <p class="num">(51) 99897-4961</p>
+          <p class="fine">Ao clicar, você abre uma conversa no WhatsApp. <a href="privacidade.html">Política de privacidade</a></p>
         </div>
       </div>
     </div>
@@ -917,8 +931,15 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
     <a class="logo" href="#topo">colombo<i></i><small>design</small></a>
     <span>Sites e landing pages sob medida · Atendimento em todo o Brasil</span>
     <span>© <span id="ano">2026</span> Colombo Design · colombodesign.com.br</span>
+    <span class="foot-links"><a href="privacidade.html">Política de privacidade</a><button type="button" id="cookie-prefs">Preferências de cookies</button></span>
   </div>
 </footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="cookie-t" hidden>
+  <h2 id="cookie-t">Sua privacidade</h2>
+  <p>Uso cookies para medir visitas e anúncios, só se você permitir. Sem eles, o site funciona igual. Detalhes na <a href="privacidade.html">política de privacidade</a>.</p>
+  <div class="cookie-btns"><button type="button" class="btn btn-ok" id="cookie-yes">Aceitar</button><button type="button" class="btn btn-ghost" id="cookie-no">Recusar</button></div>
+</div>
 
 <a class="fab" data-wa="geral" href="#" aria-label="Falar com o designer no WhatsApp"><svg><use href="#wa"/></svg><span>Falar com o designer</span></a>
 
@@ -938,6 +959,41 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
     a.target = "_blank"; a.rel = "noopener";
   });
   var y = document.getElementById("ano"); if (y) y.textContent = new Date().getFullYear();
+  // Consentimento (LGPD) e medição. Cole os IDs abaixo para ativar; sem ID, nada é carregado.
+  var TRACK = { ga4: "", metaPixel: "" };
+  var KEY = "cd-consent";
+  function getC(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function setC(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+  function loadTrackers(){
+    if (TRACK.ga4) {
+      var s = document.createElement("script"); s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + TRACK.ga4; document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      gtag("js", new Date()); gtag("config", TRACK.ga4);
+    }
+    if (TRACK.metaPixel) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", TRACK.metaPixel); fbq("track", "PageView");
+    }
+  }
+  var box = document.getElementById("cookie");
+  function show(){ if (box) box.hidden = false; }
+  function hide(){ if (box) box.hidden = true; }
+  var c = getC();
+  if (c === "yes") loadTrackers();
+  if (!c || location.hash === "#cookies") show();
+  var yes = document.getElementById("cookie-yes"), no = document.getElementById("cookie-no"), pr = document.getElementById("cookie-prefs");
+  if (yes) yes.addEventListener("click", function(){ setC("yes"); hide(); loadTrackers(); });
+  if (no) no.addEventListener("click", function(){ setC("no"); hide(); });
+  if (pr) pr.addEventListener("click", show);
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.addEventListener("click", function(){
+      if (getC() !== "yes") return;
+      if (window.gtag) gtag("event", "whatsapp_click", { origem: a.getAttribute("data-wa") });
+      if (window.fbq) fbq("track", "Contact");
+    });
+  });
 
   // Telas do portfólio: escala o desenho de 1000px (ou 390px) para a moldura e calcula quanto rolar
   function fit(){
