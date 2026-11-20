@@ -458,7 +458,8 @@ details p{color:var(--muted);padding:0 0 22px;max-width:62ch}
 .final-box p{margin-top:16px;opacity:.85;max-width:48ch}
 .final-box .btn-wa{background:var(--accent-ink);color:var(--accent);box-shadow:none}
 .final-box .fine{font-size:12.5px;line-height:1.4;margin-top:10px;opacity:.8;text-align:center;max-width:none}.final-box .fine a{color:inherit}
-.final-box .num{font:500 13px/1 var(--mono);margin-top:14px;opacity:.8;text-align:center}
+.final-box .num{font:700 15px/1 var(--mono);margin-top:14px;opacity:.9;text-align:center}
+@media (min-width:761px){.final-cta{display:flex;flex-direction:column;align-items:center}}
 @media (max-width:760px){.final-box{grid-template-columns:1fr}}
 
 footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;color:var(--muted)}
@@ -916,7 +917,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:14px;c
           <h2>Vamos colocar seu negócio no lugar certo da internet?</h2>
           <p>Me conte o que você faz e eu mostro como o seu site pode ficar. A conversa é sem compromisso.</p>
         </div>
-        <div>
+        <div class="final-cta">
           <a class="btn btn-wa" data-wa="geral" href="#"><svg><use href="#wa"/></svg>Falar com o designer</a>
           <p class="num">(51) 99897-4961</p>
           <p class="fine">Ao clicar, você abre uma conversa no WhatsApp. <a href="privacidade.html">Política de privacidade</a></p>
