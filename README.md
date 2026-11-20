@@ -28,3 +28,4 @@ No fim do `index.html`, altere a linha `var numero = "5551998974961";`. O format
 
 Publicação automática: cada envio para a branch main é publicado pela Cloudflare.
 
+
