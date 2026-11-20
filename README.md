@@ -25,3 +25,5 @@ A partir daí, cada alteração enviada ao GitHub vai ao ar sozinha em cerca de 
 ## Trocar o número do WhatsApp
 
 No fim do `index.html`, altere a linha `var numero = "5551998974961";`. O formato é 55, depois o DDD e depois o número, sem espaços.
+
+Publicação automática: cada envio para a branch main é publicado pela Cloudflare.
